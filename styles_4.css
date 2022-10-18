@@ -50,7 +50,6 @@ h3{
     width: 100%;
     column-gap: 2rem;
     background-color: #ffffff;
-    border: 1px solid #f8f8f8;
     border-radius: 2rem;
     padding: 1rem;
 }
@@ -130,14 +129,15 @@ a {
 
 .btn.btn-big{
     color: white;
-    background-color: #14d184;
+    background-color: #17c680;
+    
 }
 
 .mt{
     margin-top: 1rem;
 }
 .mt-2{
-    margin-top: 2rem;
+    margin-top: 2rem !important;
 }
 
 .text-center{
@@ -150,6 +150,9 @@ hr {
     border-top: 1px solid #f8f8f8;
     width: 100%;
 }
+.no-padding{
+    margin: 0 -1rem;
+}
 @media(min-width: 768px) {
     html{
         font-size: 24px;
@@ -157,13 +160,21 @@ hr {
     .site__container{
         padding: 3rem;
     }
+    .no-padding{
+        margin: 0 -3rem;
+    }
 }
 
 .form{
     margin-top: 2rem;
-    background: #f8f8f8;
-    padding: 2rem;
+    background: #ffffff;
+    padding: 1rem 2rem;
+    border: 2px solid #000000;
     border-radius: 30px;
+}
+.form h5 {
+    margin: 0;
+    margin-bottom: 1rem;
 }
 .form button{
     font-size: 18px;
@@ -173,6 +184,11 @@ hr {
     font-size: 18px;
     line-height: 32px;
     width: 100%;
+    border-radius: 30px;
+    border: 2px solid #000000;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
 }
 
 footer {
@@ -185,3 +201,15 @@ footer {
 .footer__item{
     display: block;
 }
+
+.img-wrap{
+    height: 400px;
+}
+
+.backgroundimage {
+    height: 100%; 
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
