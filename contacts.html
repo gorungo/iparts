@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>iParts - поиск и отправка запчастей</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Как связаться и с компанией iParts">
+    <link rel="stylesheet" href="styles_4.css">
+</head>
+<body>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function (m, e, t, r, i, k, a) {
+    m[i] = m[i] || function () {
+      (m[i].a = m[i].a || []).push(arguments)
+    };
+    m[i].l = 1 * new Date();
+    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+  })
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(87401567, "init", {
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+    webvisor: true
+  });
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/87954612" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+<div class="site">
+    <div class="site__container">
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/delivery.html">Доставка</a>
+            <a href="/about.html">О нас</a>
+            <a href="/contacts.html">Контакты</a>
+        </nav>
+        <h1 class="site__title">
+            <span class="site__city">iParts<br></span>
+            <span>Контакты</span>
+        </h1>
+        <div class="form">
+            <h5>Я ищу запчасть</h5>
+            <form name="go">
+                <label for="f_phone">Ваш телефон</label>
+                <input id="f_phone" type="text" name="phone" class="f_input" autocomplete="phone" required/>
+                <label for="f_message" style="margin-top: 20px;">Какую запчасть вы ищете?</label>
+                <textarea id="f_message" name="message" class="f_input" required></textarea>
+                <button type="button" class="btn btn-big" onclick="send()">Отправить вопрос</button>
+            </form>
+        </div>
+        <a href="tel:+79089957495" class="phone mt-2">8 (423) <strong>295-74-95</strong></a>
+        <a href="whatsapp://send?phone=79089957495" target="_blank" rel="noreferrer"
+           class="btn btn-big mt-2">
+            <span>Напишите нам в WhatsApp</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0)">
+                    <path d="M16.7929 17.7929L17.5 18.5L24 12L17.5 5.49998L16.7929 6.20708L22.0858 11.5L6.1196e-07 11.5L5.24537e-07 12.5L22.0857 12.5L16.7929 17.7929Z"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0">
+                        <rect width="24" height="24"/>
+                    </clipPath>
+                </defs>
+            </svg>
+        </a>
+        <div class="mt-2 text-center">Телефон WhatsApp: +79089957495</div>
+        <hr/>
+        <p class="note">
+            * После нажатия на кнопку "Напишите нам в WhatsApp"<br>вы будете переведены в приложение WhatsApp
+        </p>
+        <div class="map-wrap">
+            <script type="text/javascript" charset="utf-8" async
+                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8f07e1a45544ba73395cc036076b9ab48b398343789f9e8dc97de5f502f157e0&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>
+        <img class="site__ab mt-2" src="images/ab.jpg" alt="from a to b">
+        <footer class="mt-2">
+            <div class="footer__item">
+                <div>ИП ПЕТРОВ</div>
+                <div>Юр. адрес г. Владивосток, ул. Нейбута 81 кв. 165</div>
+            </div>
+            <div class="footer__item">
+                <div>
+                    Тел/WhatsApp: 8 (423) 295-74-95
+                </div>
+                <div>
+                    +79089957495
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script>
+  async function send(){
+    let formData = new FormData(document.forms.go);
+
+    await fetch('https://iparts.store/tel.php', {
+      method: 'post',
+      mode: 'no-cors',
+      body: formData
+    }).then(res => {
+      if(res.status === 200){
+        alert('Сообщение отправлено')
+      } else {
+        alert('Ошибка при отправке')
+      }
+    }).catch(e => {
+      console.log(e)
+    })
+
+  }
+  function send2(){
+    // создать объект для формы
+    let formData = new FormData(document.forms.go);
+
+    // отослать
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://iparts.store/tel.php");
+    xhr.send(formData);
+  }
+
+</script>
+</body>
+</html>

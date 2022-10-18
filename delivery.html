@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>iParts - доставка</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Доставка запчастей через iParts">
+    <link rel="stylesheet" href="styles_4.css">
+</head>
+<body>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function (m, e, t, r, i, k, a) {
+    m[i] = m[i] || function () {
+      (m[i].a = m[i].a || []).push(arguments)
+    };
+    m[i].l = 1 * new Date();
+    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+  })
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(87401567, "init", {
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+    webvisor: true
+  });
+</script>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/87954612" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+<div class="site">
+    <div class="site__container">
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/delivery.html">Доставка</a>
+            <a href="/about.html">О нас</a>
+            <a href="/contacts.html">Контакты</a>
+        </nav>
+        <h1 class="site__title">
+            <span class="site__city">iParts<br></span>
+            <span>Доставка</span>
+        </h1>
+        <p>
+            IPARTS STORE является партнером крупнейших транспортных компаний и служб доставки, таких как СДЭК, Энергия, ПЭК, Деловые линии.
+        </p>
+        <p>
+            Среднее время доставки по России от 5 до 20 рабочих дней. Доставка авиа от 3 до 7 рабочих дней.
+        </p>
+        <p>
+            Для клиентов из отдаленной местности мы детально продумываем логистику и способы доставки товаров.
+        </p>
+        <p>
+            После отправки товара мы отправляем транспортную накладную и трек-номер для отслеживания груза.
+        </p>
+        <img class="site__ab mt-2" src="images/ab.jpg" alt="from a to b">
+        <footer class="mt-2">
+            <div class="footer__item">
+                <div>ИП ПЕТРОВ</div>
+                <div>Юр. адрес г. Владивосток, ул. Нейбута 81 кв. 165</div>
+            </div>
+            <div class="footer__item">
+                <div>
+                    Тел/WhatsApp: 8 (423) 295-74-95
+                </div>
+                <div>
+                    +79089957495
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<script>
+  async function send(){
+    let formData = new FormData(document.forms.go);
+
+    await fetch('https://iparts.store/tel.php', {
+      method: 'post',
+      mode: 'no-cors',
+      body: formData
+    }).then(res => {
+      if(res.status === 200){
+        alert('Сообщение отправлено')
+      } else {
+        alert('Ошибка при отправке')
+      }
+    }).catch(e => {
+      console.log(e)
+    })
+
+  }
+  function send2(){
+    // создать объект для формы
+    let formData = new FormData(document.forms.go);
+
+    // отослать
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://iparts.store/tel.php");
+    xhr.send(formData);
+  }
+
+</script>
+</body>
+</html>
