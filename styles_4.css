@@ -206,10 +206,20 @@ footer {
     height: 400px;
 }
 
+.otzivi-wrap{
+    padding-top: 1rem;
+    background-color: #F8F8F8;
+    text-align: center;
+}
+
 .backgroundimage {
     height: 100%; 
     width: 100%;
     object-fit: cover;
     opacity: 0.5;
 }
-
+.instagram{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
